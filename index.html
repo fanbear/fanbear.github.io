@@ -8,9 +8,7 @@
     <link rel="stylesheet" type="text/css" href="build/css/normalize.css" />
     <link rel="stylesheet" href="build/css/critical.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
 </head>
 <body>
 
@@ -614,7 +612,7 @@
                         <div class="rec-product__card-price">₴100.00</div>
                     </div>
                 </div>
-                <div class="rec-banner flex">
+                <div class="rec-banner flex hide-tablet hide-mobile">
                     <div class="rec-banner__img"><img src="/build/img/rec-banner.png" alt="" width="360" height="306"></div>
                     <div class="rec-banner__link"><a class="hover-link" href="#">Антена Тріада 200</a></div>
                     <div class="rec-banner__price">₴380.00</div>
@@ -664,7 +662,7 @@
         <!-- Подпишись -->
 
         <div class="subscribe flex-center" style="background-image: url('/build/img/subscribe-bg.png');">
-            <div class="flex-row flex space-between align-center">
+            <div class="flex-row flex space-between align-center subscribe-wrapper">
                 <div class="subscribe-text">Підпишись на новини</div>
                 <div class="subscribe-input">
                     <form action="">
@@ -743,11 +741,12 @@
     <!-- ---------------- -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="build/css/main-style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="/build/js/common.js"></script>
+    <script type="text/javascript" src="/build/js/common.js"></script>
 
-    <script>
+    <script type="text/javascript">
         const brwWidth = document.documentElement.clientWidth;
         if (brwWidth < 1260) {
             $('.product-wrapper').slick({
@@ -759,7 +758,7 @@
                 slidesToScroll: 2,
                 responsive: [
                 {
-                breakpoint: 400,
+                breakpoint: 478.98,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
