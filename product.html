@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="build/css/normalize.css" />
+    <link rel="stylesheet" href="build/css/critical.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Верхная часть шапки 
+    ------------------------------------------------------------------>
+    <div class="flex-container top__line-bg">
+        <div class="top__line flex-row">
+            <div class="top__line-language align-center">
+                <span><a class="hover-link " href="">UA</a></span>
+                <span class="top__line-language-dot"></span>
+                <span><a class="hover-link top__line-language__active " href="">RU</a></span>
+            </div>
+            <!-- Телефоны -->
+            <div class="top__line-phone">
+                <div class="top__line-icon"><img src="/build/img/phone_icon.jpg" width="26" height="26" alt="phone">
+                </div>
+                <div class="top__line-text">
+                    <p>Телефон</p>
+                    <p><a class="hover-link" href="tel:0441234567">38 (044) 123 45 67</a></p>
+                </div>
+                <div class="top__line-border flex-right-position"></div>
+            </div>
+            <!-- Почта -->
+            <div class="top__line-mail">
+                <div class="top__line-icon"><img src="/build/img/e-mail_icon.jpg" width="26" height="26" alt="mail">
+                </div>
+                <div class="top__line-text">
+                    <p>E-mail</p>
+                    <p><a class="hover-link" href="mailto:automode@gmail.com">automode@gmail.com</a></p>
+                </div>
+                <div class="top__line-border flex-right-position"></div>
+            </div>
+            <!-- Адресса -->
+            <div class="top__line-address">
+                <div class="top__line-icon"><img src="/build/img/location_icon.jpg" width="24" height="32"
+                        alt="address"></div>
+                <div class="top__line-text">
+                    <p>Місцезнаходження</p>
+                    <p><span>Київ, Україна</span></p>
+                    <div class="top__line-text__hover">
+                        <p><span>Харьков, вул. Вернатського</span></p>
+                        <hr>
+                        <p><span>Львiв, вул. Вернатського</span></p>
+                        <hr>
+                        <p><span>Одесса, вул. Вернатського</span></p>
+                    </div>
+                </div>
+                <div class="top__line-button__open">
+                    <img src="/build/img/arrow_down.png" width="11" height="6" alt="open address">
+                </div>
+            </div>
+            <!-- Пользователь -->
+            <div class="top__line-user flex-right-position">
+                <div class="top__line-icon"><img src="/build/img/login_icon.jpg" width="22" height="28" alt="phone">
+                </div>
+                <div class="top__line-text">
+                    <span><a class="hover-link" href="#">Ввiйти</a></span>
+                    <span>або</span>
+                    <span><a class="hover-link" href="#">Зареєструватись</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Шапка сайта 
+    ------------------------------------------------------------------>
+    <div class="flex-container">
+        <div class="header flex-row">
+
+            <!-- кнопка меню для мобильной адаптации -->
+            <div class="mobile-menu flex-center hover-link"><i><i class="fas fa-bars"></i></i></div>
+
+            <!-- Логотип -->
+            <div class="header-logotype align-center"><a href="/"><img src="/build/img/logo.png" width="268" height="34"
+                        alt=""></a></div>
+
+            <!-- Поиск -->
+            <div class="header-search">
+                <!-- кнопка меню для планшетной адаптации -->
+                <div class="table-menu flex-center hover-link hide-mobile"><i><i class="fas fa-bars"></i></i></div>
+
+                <!-- Код для модуля, вместо него php вызов поиска -->
+                <div class="header-search__form flex-center">
+                    <div class="header-search__category hide-mobile">
+                        <button type="button" class="header-search__category-btn dropdown-toggle hover-link"
+                            data-toggle="dropdown">
+                            <span class="header-search__category-span ">Категории</span>
+                            <span class="header-search__open-category"><img src="/build/img/arrow_down.png"
+                                    alt=""></span>
+                        </button>
+
+                        <input type="hidden" name="filter_category_id" value="" />
+                        <ul class="dropdown-menu">
+                            <li class="header-search__category-li hover-link" data-id="{{ category.category_id }}">
+                                <a>Категория 1</a>
+                            </li>
+                            <li class="header-search__category-li hover-link" data-id="{{ category.category_id }}">
+                                <a>Категория 2</a>
+                            </li>
+                            <li class="header-search__category-li hover-link" data-id="{{ category.category_id }}">
+                                <a>Категория 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="text" name="search" value="" placeholder="Пошук..." aria-label="Search"
+                        class="header-search__input form-control" />
+                    <button type="button" class="header-search__btn search-btn flex-center">Пошук</button>
+                </div>
+                <div class="live-search" style="display:none">
+                    <ul class="live-search__ul">
+                        <li class="loading"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Корзина -->
+            <div class="header-shop flex-evenly">
+                <div class="header-shop__compare hide-mobile">
+                    <a class="hover-link" href="#"><i class="fas fa-circle-notch"></i></a>
+                    <span class="header-shop__count flex-center">5</span>
+                </div>
+                <div class="header-shop__wishlist hide-mobile">
+                    <a class="hover-link" href="#"><i class="fas fa-heart"></i></a>
+                    <span class="header-shop__count flex-center">3</span>
+                </div>
+                <div class="header-shop__basket">
+                    <a class="hover-link" href="#"><i class="fas fa-shopping-bag"></i></a>
+                    <span class="header-shop__count flex-center">2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Меню сайта 
+    ------------------------------------------------------------------>
+    <div class="flex-container menu">
+        <div class="flex-row flex align-center">
+            <nav class="menu-nav flex align-center">
+                <div class="menu-nav__title flex ">
+                    <div>Каталог</div>
+                    <div><i class="fas fa-bars"></i></div>
+                </div>
+                <ul class="menu-nav__list">
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="https://google.com.ua">Active
+                                    - 1</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Active -
+                                            10</a></span>
+                                    <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                                </div>
+                                <ul>
+                                    <li class="no-submenu">
+                                        <div class="menu-nav__list-title flex align-items space-between">
+                                            <span class="menu-nav__list-link"><a class="hover-link"
+                                                    href="https://google.com.ua">Link -
+                                                    100</a></span>
+                                        </div>
+                                    </li>
+                                    <li class="no-submenu">
+                                        <div class="menu-nav__list-title flex align-items space-between">
+                                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                                    100</a></span>
+                                        </div>
+                                    </li>
+                                    <li class="no-submenu">
+                                        <div class="menu-nav__list-title flex align-items space-between">
+                                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                                    100</a></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            10</a></span>
+                                </div>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            10</a></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Active - 2</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                        <ul>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            20</a></span>
+                                </div>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            20</a></span>
+                                </div>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            20</a></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-submenu">
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Нет вложеностей</a></span>
+                        </div>
+                    </li>
+                    <li class="no-submenu">
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Нет вложеностей</a></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link - 5</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link - 6</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link - 7</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-list">
+                <ul class="flex align-center space-between">
+                    <li class="flex flex-center"><a href="#">Плюшки</a></li>
+                    <li class="flex flex-center"><a href="#">Подарунковi карти</a></li>
+                    <li class="flex flex-center"><a href="#">Клієнтам</a></li>
+                    <li class="flex flex-center"><a href="#">Послуги</a></li>
+                    <li class="flex flex-center"><a href="#">Акції</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Хлебные крошки
+    ------------------------------------------------------------------>
+    <div class="flex-container">
+        <div class="flex-row">
+            <ul class="breadcrumb flex">
+                <li class="flex align-center"><a class="hover-link" href="#">Електроніка</a> <i
+                        class="fas fa-chevron-right"></i></li>
+                <li class="flex align-center"><a class="hover-link" href="#">Відеоспостереження</a> <i
+                        class="fas fa-chevron-right"></i></li>
+                <li>Відеорегістратори</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Контент 
+    ------------------------------------------------------------------>
+    <main class="flex-container" id="product-page">
+        <div class="flex-row">
+            <div class="product flex align-center">
+                <div class="product-thumb">
+                    <div class="product-thumb__main-img">
+                        <img src="/build/img/product-page-img.png" width="450" height:="300" alt="товар">
+                    </div>
+                    <div class="product-thumb__aditionaly-img">
+                        <ul class="flex flex-center">
+                            <li><img src="./build/img/product-adt-1.png" width="100" height="100" alt=""></li>
+                            <li><span class="aditionaly-img__line flex"></span></li>
+                            <li><img src="./build/img/product-adt-2.png" width="100" height="100" alt=""></li>
+                            <li><span class="aditionaly-img__line flex"></span></li>
+                            <li><img src="./build/img/product-adt-3.png" width="100" height="100" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-data">
+                    <div class="product-data__main-category">Відеореєстратор</div>
+                    <div class="product-data__h1">Відеореєстратор Playme Netton</div>
+                    <div class="product-data__raiting flex align-center">
+                        <div class="product-raiting flex-center">
+                            <div class="product-raiting__item full-star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-raiting__item full-star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-raiting__item full-star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-raiting__item full-star">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-raiting__item clear-star">
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="product-data__raiting-digit flex align-center"> <span>4,5</span></div>
+                    </div>
+                    <div class="product-data__options flex align-center">
+                        <div class="product-data__options-radio flex align-center">
+                            <span>Колiр:</span>
+                            <div class="options-radio__wrapper flex-center">
+                                <label class="flex">
+                                    <input type="radio" name="test" value="small" checked>
+                                    <img src="build/img/radio.png">
+                                </label>
+                                <label class="flex">
+                                    <input type="radio" name="test" value="small">
+                                    <img src="build/img/radio.png">
+                                </label>
+                                <label class="flex">
+                                    <input type="radio" name="test" value="small">
+                                    <img src="build/img/radio.png">
+                                </label>
+                                <label class="flex">
+                                    <input type="radio" name="test" value="small">
+                                    <img src="build/img/radio.png">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="product-data__options-lable flex-center">
+                            <span>Модель:</span>
+                            <div class="options-lable__wrapper flex">
+                                <label>
+                                    <input type="radio" name="label" value="small" checked>
+                                    <span class="flex flex-center">32GB</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="label" value="small">
+                                    <span class="flex flex-center">64GB</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-data__discont-timer flex align-center">
+                        <div class="discont-timer__wrapper flex">
+                            <div class="timer-wrapper__text">До кінця акції:</div>
+                            <div class="timer-wrapper__item">
+                                <div class="wrapper-item__days">00</div>
+                            </div>
+                            <div class="timer-wrapper__dodet">:</div>
+                            <div class="timer-wrapper__item">
+                                <div class="wrapper-item__hours">00</div>
+                            </div>
+                            <div class="timer-wrapper__dodet">:</div>
+                            <div class="timer-wrapper__item">
+                                <div class="wrapper-item__minuts">00</div>
+                            </div>
+                            <div class="timer-wrapper__dodet">:</div>
+                            <div class="timer-wrapper__item">
+                                <div class="wrapper-item__seconds" style="color: #f13636">00</div>
+                            </div>
+                        </div>
+                        <div class="discont-timer__date">( <span class="first-day">01.10.2021</span> - <span
+                                class="last-day">28.10.2021</span> )</div>
+                    </div>
+                    <div class="product-data__actions">
+                        <div class="product-data__actions-price flex align-center">
+                            <div class="actions-price">
+                                <div class="actions-price__old flex align-center">
+                                    <span>₴2900</span>
+                                    <span class="actions-price__discont flex-center">-20%</span>
+                                </div>
+                                <div class="actions-price__new">₴2320</div>
+                            </div>
+                            <div class="actions-btn">
+                                <button class="actions-btn__buy">Купити</button>
+                                <button class="actions-btn__credit">Купити і кредит</button>
+                            </div>
+                        </div>
+                        <div class="product-data__actions-list flex">
+                            <a href="#"><i class="fas fa-heart"></i> До списку
+                                бажань</a>
+                            <a href="#"><i class="fas fa-circle-notch"></i>
+                                Порівняти</a>
+                            <a href="#"><i class="fas fa-phone-alt"></i> Швидке
+                                замовлення</a>
+                        </div>
+                    </div>
+                    <hr class="product-data__line">
+                    <div class="product-data__delivery">
+                        <div class="product-data__delivery-title">Доставка:</div>
+                        <div class="product-data__delivery-item flex align-center">
+                            <div class="delivery-item__services flex">
+                                <img src="./build/img/prd-delivery-1.png" width="25" height="10" alt="">
+                                <span>Самовивіз</span>
+                            </div>
+                            <div><span>Сьогодні</span></div>
+                            <div><span>Безкоштовно</span></div>
+                        </div>
+                        <div class="product-data__delivery-item flex align-center">
+                            <div class="delivery-item__services flex">
+                                <img src="./build/img/prd-delivery-2.png" width="24" height="14" alt="">
+                                <span>Експрес-доставка</span>
+                            </div>
+                            <div><span>1 день</span></div>
+                            <div><span>₴100</span></div>
+                        </div>
+                        <div class="product-data__delivery-item flex align-center">
+                            <div class="delivery-item__services flex">
+                                <img src="./build/img/prd-delivery-3.png" width="24" height="23" alt="">
+                                <span>Самовивіз “Нова пошта”</span>
+                            </div>
+                            <div><span>2-5 днів</span></div>
+                            <div><span>₴50</span></div>
+                        </div>
+                        <div class="product-data__delivery-item flex align-center">
+                            <div class="delivery-item__services flex">
+                                <img src="./build/img/prd-delivery-4.png" width="23" height="21" alt="">
+                                <span>Кур’єром “Нова пошта”</span>
+                            </div>
+                            <div><span>2 дні</span></div>
+                            <div><span>₴60</span></div>
+                        </div>
+                    </div>
+                    <hr class="product-data__line">
+                    <div class="product-data__payment">
+                        <div class="product-data__payment-title">Оплата:</div>
+                        <div class="product-data__payment-text">
+                            <p>Готівкою, Безготівковими, VISA/Mastercard, GooglePay, ApplePay</p>
+                        </div>
+                    </div>
+                    <hr class="product-data__line">
+                    <div class="product-data__exchange">
+                        <div class="product-data__exchange-title">Обмін/повернення:</div>
+                        <div class="product-data__exchange-text">
+                            <p>Обмін і повернення товару здійснюється протягом 14 днів після покупки, відповідно
+                                до закону України"Про захист прав споживачів України"</p>
+                        </div>
+                        <div class="product-data__exchange-garanty">
+                            <p>Гарантія: 12 місяців</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info flex-row">
+                <div class="product-info__header flex">
+                    <div class="product-info__header-item header-item__active">
+                        <span>Опис</span>
+                    </div>
+                    <div class="product-info__header-item">
+                        <span>Відгуки</span><span>(3)</span>
+                    </div>
+                    <div class="product-info__header-item">
+                        <span>Характеристики</span>
+                    </div>
+                </div>
+                <div class="product-info__body">
+                    <div class="product-info__body-item flex body-item__active">
+                        <div class="body-item__title">Опис товару</div>
+                        <div class="body-item__text">
+                            <span>Відеореєстратор Playme Netton</span>
+                            <p>Сучасний відеореєстратор Playme NETTON - новинка 2018 року. Перевагою є наявність двох
+                                камер - основної і камери
+                                заднього виду. Даний функціонал дозволяє максимально убезпечити пересування на дорозі.
+                                Playme NETTON веде
+                                запис у високій роздільній здатності. Фронтальна камера з роздільною здатністю 1920x1080
+                                пікселів, з можливість
+                                зміни на більш низьке 1280x720. Камера заднього виду - 1280x720 пікселів. Реєстратор
+                                високого дозволу оснащений
+                                виносною камерою, гарантує хороший огляд дороги як спереду, так і ззаду автомобіля.
+                                Високотехнологічна матриця
+                                від Sony (основна камера - 2 Mp (Sony IMX323), задня - 1 Mp (OV9726)) спільно з
+                                об'єктивом з 6 скляних лінз дають
+                                можливість реєструвати відеоролики великої деталізації, на яких добре помітні в тому
+                                числі і невеликі елементи -
+                                дорожні знаки / розмітка / реєстраційні знаки машин. Реєстратор Playme NETTON обладнаний
+                                великим
+                                інформативним екраном 3 дюйми. Пристрій підтримує функцію LDWS, яка застерігає шофера
+                                про відхилення від
+                                встановленої смуги переміщення, надає можливість дотримуватися обраної дорожньої смуги,
+                                не дозволяючи
+                                безконтрольний виїзд за її межі.</p>
+                        </div>
+                    </div>
+                    <div class="product-info__body-item">
+                        <div class="body-item__title flex-start flex">Відгуки</div>
+                        <div class="body-item__text">
+                            <div class="body-item__text-reviews">
+                                <span>Name Surname</span>
+                                <span class="body-item__text-date">3 Червня 2021</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna
+                                    aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. Duis aute
+                                    irure
+                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
+                                <div class="product-data__raiting flex align-center">
+                                    <div class="product-raiting flex-center">
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item clear-star">
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body-item__text-reviews">
+                                <span>Name Surname</span>
+                                <span class="body-item__text-date">3 Червня 2021</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna
+                                    aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. Duis aute
+                                    irure
+                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
+                                <div class="product-data__raiting flex align-center">
+                                    <div class="product-raiting flex-center">
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item clear-star">
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="body-item__text-reviews">
+                                <span>Name Surname</span>
+                                <span class="body-item__text-date">3 Червня 2021</span>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna
+                                    aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                    ex ea commodo consequat. Duis aute
+                                    irure
+                                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.</p>
+                                <div class="product-data__raiting flex align-center">
+                                    <div class="product-raiting flex-center">
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item full-star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="product-raiting__item clear-star">
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info__body-item">
+                        <div class="body-item__attribute">
+                            <div class="body-item__attribute-title">Характеристики товару</div>
+                            <ul class="body-item__attribute-wrapper">
+                                <li class="flex">
+                                    <span>Бренд</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>Playme</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Кількість камер</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>1920x1080 (Full HD) пікселів</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Роздільна здатність запису</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>145</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Кут огляду</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>3 дюйм</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Бренд</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>Playme</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Кількість камер</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>1920x1080 (Full HD) пікселів</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Роздільна здатність запису</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>145</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Кут огляду</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>3 дюйм</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Бренд</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>Playme</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Кількість камер</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>1920x1080 (Full HD) пікселів</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Роздільна здатність запису</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>145</span>
+                                </li>
+                                <li class="flex">
+                                    <span>Кут огляду</span>
+                                    <span>
+                                        <hr>
+                                    </span>
+                                    <span>3 дюйм</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Рекомендации 
+        -------------------------------------------->
+        <div class="flex-row">
+            <style>
+                .rec-module {
+                    margin-top: 85px;
+                    padding-bottom: 160px;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    position: relative
+                }
+
+                .rec-module .slick-prev {
+                    top: -140px;
+                    right: 25px;
+                    position: absolute
+                }
+
+                .rec-module .slick-prev i {
+                    font-size: 17px;
+                    color: #c4c4c4
+                }
+
+                .rec-module .slick-prev i:hover {
+                    color: #0259a9
+                }
+
+                .rec-module .slick-next {
+                    top: -140px;
+                    right: 0;
+                    position: absolute
+                }
+
+                .rec-module .slick-next i {
+                    font-size: 18px;
+                    color: #484848
+                }
+
+                .rec-module .slick-next i:hover {
+                    color: #0259a9
+                }
+
+                .rec-module .slick-dots {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center
+                }
+
+                .rec-module .slick-dots li {
+                    list-style: none;
+                    height: 22px;
+                    width: 22px;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    border-radius: 11px;
+                    border: 1px solid #a7a7a7;
+                    margin-left: 8px
+                }
+
+                .rec-module .slick-dots li button {
+                    padding: 0;
+                    margin: 0;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center
+                }
+
+                .rec-module .slick-dots li i {
+                    font-size: 10px;
+                    color: #a7a7a7
+                }
+
+                .rec-module .slick-dots .slick-active {
+                    border: 1px solid #0259a9
+                }
+
+                .rec-module .slick-dots .slick-active i {
+                    color: #0259a9
+                }
+
+                .rec-module .rec-module__title {
+                    font-size: 32px;
+                    color: #252924;
+                    font-weight: 700
+                }
+
+                .rec-module .rec-module__title span {
+                    font-weight: 300
+                }
+
+                .rec-module .rec-module__line {
+                    background: #ebebeb;
+                    width: 100%;
+                    height: 2px;
+                    margin-top: 30px;
+                    border: 0;
+                    margin-bottom: 80px
+                }
+
+                .rec-module .rec-module__wrapper {
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap
+                }
+
+                .rec-module .rec-module__wrapper .rec-module__wrapper-product {
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1 1 calc(100% / 4);
+                    flex: 1 1 calc(100% / 4)
+                }
+
+                .rec-module .rec-module__wrapper .rec-product__card {
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column
+                }
+
+                .rec-module .rec-module__wrapper .rec-product__card .rec-product__card-img {
+                    margin-bottom: 60px
+                }
+
+                .rec-module .rec-module__wrapper .rec-product__card .rec-product__card-link {
+                    text-align: center;
+                    margin-bottom: 10px
+                }
+
+                .rec-module .rec-module__wrapper .rec-product__card .rec-product__card-link a {
+                    color: #626060
+                }
+
+                .rec-module .rec-module__wrapper .rec-product__card .rec-product__card-price {
+                    color: #0259a9;
+                    font-size: 21px;
+                    margin-bottom: 30px
+                }
+            </style>
+            <div class="rec-module flex">
+                <div class="rec-module__title">Рекомендовані <span>товари</span></div>
+                <hr class="rec-module__line">
+                <div class="rec-module__wrapper flex">
+                    <div class="rec-module__wrapper-product">
+                        <div class="rec-product__card flex">
+                            <div class="rec-product__card-img flex-center">
+                                <img src="/build/img/rec-img.png" alt="" width="160" height="90">
+                            </div>
+                            <div class="rec-product__card-link"><a class="hover-link" href="#">Автомагнітола 303</a>
+                            </div>
+                            <div class="rec-product__card-price flex-center">₴100.00</div>
+                        </div>
+                    </div>
+                    <div class="rec-module__wrapper-product">
+                        <div class="rec-product__card flex">
+                            <div class="rec-product__card-img flex-center">
+                                <img src="/build/img/rec-img.png" alt="" width="160" height="90">
+                            </div>
+                            <div class="rec-product__card-link"><a class="hover-link" href="#">Автомагнітола 303</a>
+                            </div>
+                            <div class="rec-product__card-price flex-center">₴100.00</div>
+                        </div>
+                    </div>
+                    <div class="rec-module__wrapper-product">
+                        <div class="rec-product__card flex">
+                            <div class="rec-product__card-img flex-center">
+                                <img src="/build/img/rec-img.png" alt="" width="160" height="90">
+                            </div>
+                            <div class="rec-product__card-link"><a class="hover-link" href="#">Автомагнітола 303</a>
+                            </div>
+                            <div class="rec-product__card-price flex-center">₴100.00</div>
+                        </div>
+                    </div>
+                    <div class="rec-module__wrapper-product">
+                        <div class="rec-product__card flex">
+                            <div class="rec-product__card-img flex-center">
+                                <img src="/build/img/rec-img.png" alt="" width="160" height="90">
+                            </div>
+                            <div class="rec-product__card-link"><a class="hover-link" href="#">Автомагнітола 303</a>
+                            </div>
+                            <div class="rec-product__card-price flex-center">₴100.00</div>
+                        </div>
+                    </div>
+                    <div class="rec-module__wrapper-product">
+                        <div class="rec-product__card flex">
+                            <div class="rec-product__card-img flex-center">
+                                <img src="/build/img/rec-img.png" alt="" width="160" height="90">
+                            </div>
+                            <div class="rec-product__card-link"><a class="hover-link" href="#">Автомагнітола 303</a>
+                            </div>
+                            <div class="rec-product__card-price flex-center">₴100.00</div>
+                        </div>
+                    </div>
+                    <div class="rec-module__wrapper-product">
+                        <div class="rec-product__card flex">
+                            <div class="rec-product__card-img flex-center">
+                                <img src="/build/img/rec-img.png" alt="" width="160" height="90">
+                            </div>
+                            <div class="rec-product__card-link"><a class="hover-link" href="#">Автомагнітола 303</a>
+                            </div>
+                            <div class="rec-product__card-price flex-center">₴100.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    $('.rec-module__wrapper').slick({
+                        dots: true,
+                        arrows: true,
+                        infinite: true,
+                        speed: 300,
+                        slidesToShow: 4,
+                        slidesToScroll: 2,
+                        responsive: [{
+                            breakpoint: 1200,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 2,
+                                infinite: true,
+                                dots: true
+                            }
+                        }]
+                    });
+
+                    const btnPrev = document.querySelector('.slick-prev');
+                    const btnNext = document.querySelector('.slick-next');
+                    const dot = document.querySelectorAll('.slick-dots button');
+
+
+                    if (document.querySelector('.rec-module')) {
+                        btnPrev.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                        btnNext.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                        dot.forEach(function (item) {
+                            item.innerHTML = '<i class="fas fa-circle"></i>';
+                        })
+                    }
+                })
+            </script>
+        </div>
+    </main>
+
+
+    <!-- Футер 
+    ------------------------------------------------------------------->
+    <footer>
+        <div class="flex-container main-footer">
+            <div class="flex-row align-stretch space-between flex">
+                <div class="footer-item">
+                    <div class="footer-logo">
+                        <img src="/build/img/logo.png" alt="">
+                    </div>
+                    <div class="footer-phone ">
+                        <a class="align-center hover-link" href="tel:0661370953"><img
+                                src="/build/img/call_icon_footer.png" alt="" width="42" height="42">+38 (066) 137 09
+                            53</a>
+                        <span>Киев, Україна</span>
+                    </div>
+                    <div class="footer-social">
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-twitter"></i></div>
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-facebook-f"></i></div>
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-youtube"></i></div>
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-instagram"></i></div>
+                    </div>
+                </div>
+                <div class="footer-item hide-mobile">
+                    <p>Категории</p>
+                    <ul>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item hide-mobile">
+                    <p>Меню</p>
+                    <ul>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Головна</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Про Нас</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Послуги</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Товари</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Головна</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Про Нас</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Послуги</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Товари</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Нижная линия -->
+        <div class="main-footer__underline ">
+            <div class="flex-container">
+                <div class="flex-row space-between flex underline">
+                    <div class="underline-item align-center">
+                        <p>© Automode. All rights reserved 2021</p>
+                    </div>
+                    <div class="underline-item align-center">
+                        <a class="flex-center hover-link" href=""><i class="fab fa-cc-paypal"></i></a>
+                        <a class="flex-center hover-link" href=""><i class="fab fa-cc-visa"></i></a>
+                        <a class="flex-center hover-link" href=""><i class="fab fa-cc-mastercard"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="build/css/product.css">
+    <link rel="stylesheet" href="build/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/build/js/common.js"></script>
+    <script src="/build/js/product.js"></script>
+</body>
+
+</html>
