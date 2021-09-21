@@ -211,7 +211,7 @@
     <!-- Меню сайта
     ------------------------------------------------------------------>
     <div class="flex-container menu">
-        <div class="flex-row flex align-center">
+        <div class="flex-row flex align-center menu-mobile__no-margin">
             <nav class="menu-nav flex align-center">
                 <div class="menu-nav__title flex ">
                     <div>Каталог</div>
@@ -341,8 +341,68 @@
     <div class="flex-container" id="common-home">
 
 
+        <!-- Баннер на главной 
+        --------------------------------------------------------------------------->
+        <div class="home-banner flex-center">
+            <div class="flex-row">
+                <div class="home-banner__wrappper banner-styles">
+                    <div class="banner-item flex">
+                        <div class="banner-item__action">
+                            <div class="banner-item__title">Моторна олива MOBIL Super</div>
+                            <div class="banner-item__text">Масло преміального класу з передовим
+                                рівнем властивостей .
+                            </div>
+                            <div class="banner-item__btn">
+                                <a href="#" class="flex-center">Придбати
+                                    <hr class="banner-item__btn-line">
+                                    ₴678
+                                </a>
+                            </div>
+                        </div>
+                        <div class="banner-item__img">
+                            <img src="./build/img/home-banner.png" width="538" height="437" alt="">
+                        </div>
+                    </div>
+                    <div class="banner-item flex">
+                        <div class="banner-item__action">
+                            <div class="banner-item__title">Моторна олива MOBIL Super</div>
+                            <div class="banner-item__text">Масло преміального класу з передовим
+                                рівнем властивостей .
+                            </div>
+                            <div class="banner-item__btn">
+                                <a href="#" class="flex-center">Придбати
+                                    <hr class="banner-item__btn-line">
+                                    ₴678
+                                </a>
+                            </div>
+                        </div>
+                        <div class="banner-item__img">
+                            <img src="./build/img/home-banner.png" width="538" height="437" alt="">
+                        </div>
+                    </div>
+                    <div class="banner-item flex">
+                        <div class="banner-item__action">
+                            <div class="banner-item__title">Моторна олива MOBIL Super</div>
+                            <div class="banner-item__text">Масло преміального класу з передовим
+                                рівнем властивостей .
+                            </div>
+                            <div class="banner-item__btn">
+                                <a href="#" class="flex-center">Придбати
+                                    <hr class="banner-item__btn-line">
+                                    ₴678
+                                </a>
+                            </div>
+                        </div>
+                        <div class="banner-item__img">
+                            <img src="./build/img/home-banner.png" width="538" height="437" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Модуль лидеры продаж 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="flex-row">
             <style>
                 .bestseller {
@@ -742,11 +802,12 @@
 
 
         <!-- Модуль табов 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="flex-row">
             <style>
                 .product-tabs {
-                    margin-top: 85px
+                    margin-top: 85px;
+                    overflow: hidden;
                 }
 
                 @media (max-width:1280px) {
@@ -782,7 +843,7 @@
 
                 .product-tabs .product-tabs__header-active {
                     position: relative;
-                    color: #090909
+                    color: #090909;
                 }
 
                 .product-tabs .product-tabs__header-active::after {
@@ -886,7 +947,24 @@
                 .product-tabs .product-tabs__content .product-tabs__content-active {
                     display: -webkit-box;
                     display: -ms-flexbox;
-                    display: flex
+                    display: flex;
+
+                }
+
+                .product-tabs .product-tabs__content .product-tabs__content-active .product-tabs__cart {
+                    animation: active-tabs 0.4s ease-in
+                }
+
+                @keyframes active-tabs {
+                    0% {
+                        transform: scaleX(0);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: scaleX(1);
+                        opacity: 1;
+                    }
                 }
             </style>
             <div class="product-tabs">
@@ -1053,16 +1131,71 @@
 
 
         <!-- Баннер контента 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="content-banner flex-center">
             <div class="flex-row">
-                баннер
+                <div class="content-banner__wrapper banner-styles">
+                    <div class="banner-item flex align-center">
+                        <div class="banner-item__img flex-center">
+                            <img src="./build/img/banner-body.png" width="471" height="408" alt="">
+                            <span class="banner-item__discont flex-center">-25%</span>
+                        </div>
+                        <div class="banner-item__action">
+                            <div class="banner-item__title">Відеореєстратор Gazer F730</div>
+                            <div class="banner-item__text">Відеореєстратор Gazer F725 володіє широким
+                                функціоналом, має безліч можливостей.
+                            </div>
+                            <div class="banner-item__btn">
+                                <a href="#" class="flex-center">Придбати
+                                    <hr class="banner-item__btn-line">
+                                    ₴3500
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-item flex align-center">
+                        <div class="banner-item__img flex-center">
+                            <img src="./build/img/banner-body.png" width="471" height="408" alt="">
+                            <span class="banner-item__discont flex-center">-25%</span>
+                        </div>
+                        <div class="banner-item__action">
+                            <div class="banner-item__title">Відеореєстратор Gazer F730</div>
+                            <div class="banner-item__text">Відеореєстратор Gazer F725 володіє широким
+                                функціоналом, має безліч можливостей.
+                            </div>
+                            <div class="banner-item__btn">
+                                <a href="#" class="flex-center">Придбати
+                                    <hr class="banner-item__btn-line">
+                                    ₴3500
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner-item flex align-center">
+                        <div class="banner-item__img flex-center">
+                            <img src="./build/img/banner-body.png" width="471" height="408" alt="">
+                            <span class="banner-item__discont flex-center">-25%</span>
+                        </div>
+                        <div class="banner-item__action">
+                            <div class="banner-item__title">Відеореєстратор Gazer F730</div>
+                            <div class="banner-item__text">Відеореєстратор Gazer F725 володіє широким
+                                функціоналом, має безліч можливостей.
+                            </div>
+                            <div class="banner-item__btn">
+                                <a href="#" class="flex-center">Придбати
+                                    <hr class="banner-item__btn-line">
+                                    ₴3500
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
 
         <!-- Мини карточки товара в виде баннеров 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="flex-row">
             <style>
                 .mini-cart__wrapper {
@@ -1225,7 +1358,7 @@
 
 
         <!-- Рекомендации 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="flex-row">
             <style>
                 .rec {
@@ -1464,7 +1597,7 @@
 
 
         <!-- Информационный блок 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="support flex-center">
             <style>
                 .support {
@@ -1561,7 +1694,7 @@
 
 
         <!-- Подпишись 
-    -------------------------------------------------------------------------------->
+        -------------------------------------------------------------------------------->
         <div class="subscribe flex-center" style="background-image: url('/build/img/subscribe-bg.png');">
             <style>
                 .subscribe {
@@ -1788,17 +1921,58 @@
                             slidesToShow: 1,
                             slidesToScroll: 1,
                             infinite: true,
-                            dots: false
+                            dots: true
                         }
                     }]
             });
         }
+        const bestSellerDot = document.querySelectorAll('.bestseller .slick-dots button');
+
+        if (bestSellerDot) {
+            bestSellerDot.forEach(function (item) {
+                item.innerHTML = '<i class="fas fa-circle"></i>';
+            })
+        }
 
         bestSeller.addEventListener('click', function (e) {
             const target = e.target.closest('.product-pop__up-wrapper');
-
             target.querySelector('.product-pop__up-text').classList.toggle('product-pop__up-active');
         })
+    </script>
+    <script>
+
+        $('.home-banner__wrappper').slick({
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+        const mainBannerDots = document.querySelectorAll('.home-banner .slick-dots button');
+
+        if (mainBannerDots) {
+            mainBannerDots.forEach(function (item) {
+                item.innerHTML = '<i class="fas fa-circle"></i>';
+            })
+        }
+    </script>
+    <script>
+        $('.content-banner__wrapper').slick({
+            dots: true,
+            arrows: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+        const bodyBannerDots = document.querySelectorAll('.content-banner .slick-dots button');
+
+        if (bodyBannerDots) {
+            bodyBannerDots.forEach(function (item) {
+                item.innerHTML = '<i class="fas fa-circle"></i>';
+            })
+        }
     </script>
 </body>
 

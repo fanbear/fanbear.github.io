@@ -3,51 +3,91 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     //Верхная часть шапки
+    //-----------------------------------------------------------------------
     const address = document.querySelector('.top__line-text__hover');
     const addressBtn = document.querySelector('.top__line-button__open');
 
     // Шапка сайта
+    //------------------------------------------------------------------------
     const searchList = document.querySelector('.header-search__category .dropdown-menu');
     const searchBtn = document.querySelector('.header-search__open-category');
     const basketBtn = document.querySelector('.header-shop__basket');
     const basketPopUpWrapper = document.querySelector('.header-shop__basket-wrapper');
 
     //Табы
+    //------------------------------------------------------------------------
     const tabsHeader = document.querySelectorAll('.product-tabs__header-title');
     const tabsContent = document.querySelectorAll('.product-tabs__content-wrapper');
 
     //Фильтр открытие и скрытие
+    //------------------------------------------------------------------------
     const filterBtnOpen = document.querySelector('.category-sort__filter');
     const filterBtnClose = document.querySelector('.filter-module__header-close');
     const filter = document.querySelector('.modules');
 
     //Сортировка в категориях
+    //------------------------------------------------------------------------
     const sortBtn = document.querySelector('.category-sort__arrow');
     const sortList = document.querySelector('.category-sort__list');
 
 
     //Меню сайта
+    //------------------------------------------------------------------------
     const nav = document.querySelector('.menu-nav');
     const navBtnPC = nav.querySelector('.menu-nav__title i');
     const navMainList = nav.querySelector('.menu-nav__list');
+    const navMobBtn = document.querySelector('.mobile-menu');
+    const navTabMenu = document.querySelector('.table-menu');
 
-    //открытие основного меню по клику
+    function addMobMenuCloseBtn(selector) {
+
+        if (!navMainList.querySelector('.nav-menu__close-mobile')) {
+            navMainList.insertAdjacentHTML('afterbegin', `<div class="nav-menu__close-mobile hide-desktop flex-center"><i class="fas fa-times"></i></div>`);
+        }
+        const closeMobileMenu = document.querySelector('.menu-nav__list-active');
+
+        closeMobileMenu.addEventListener('click', function (e) {
+
+            if (e.target.closest(selector)) {
+                document.querySelector('.menu').style.display = 'none';
+                document.querySelector('.menu-nav').style.display = 'none';
+                document.querySelector('.menu-list').style.display = 'flex'
+                navMainList.classList.remove('menu-nav__list-active');
+            }
+        })
+
+
+    }
+
+
+
+    //Основное меню
+    //------------------------------------------------------------------------
+    //Открытие основного меню по клику
+    //------------------------------------------------------------------------
     if (navBtnPC) {
+
+        const homeBanner = document.querySelector('.home-banner ');
+
+        if (homeBanner) {
+            navMainList.classList.add('menu-nav__list-active');
+        }
+
         navBtnPC.addEventListener('click', function () {
             navMainList.classList.toggle('menu-nav__list-active');
+
         })
     }
 
-    //Открытие вложеных меню по клику
-
     //Закрыть все активные подменю и убрать фон у елемента li в основном меню
+    //------------------------------------------------------------------------
     function closeAllSubmenu(current = null) {
         const navList = document.querySelectorAll('.menu-nav__list ul');
         let parents = [];
 
         if (current) {
             let parentNode = current.parentNode
-            // console.dir(current);
+
             while (parentNode) {
                 if (parentNode.classList.contains('menu-nav__list')) {
                     break;
@@ -68,8 +108,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     }
+
     //открыть подменю
     //добавить класс елементу li (li->backgorund)
+    //------------------------------------------------------------------------
     function openAllSubmenu(el, selector) {
         if (!el.classList.contains('no-submenu')) {
             el.classList.toggle('submenu-open');
@@ -97,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // elem - элемент который нужно скрыть/отобразить
     // btn - кнопка (img) которой нужно задать действие при открытии
     // вложеность для кнопки например: <span><img src="arrow"></span>
+    //------------------------------------------------------------------------
     function toggleSelector(elem, btn) {
         if (elem.classList.contains('open-selector')) {
             elem.classList.remove('open-selector');
@@ -112,13 +155,34 @@ document.addEventListener('DOMContentLoaded', function () {
     //selector = doc.qS('selector')
     //active = 'active-menu / active-filter'
     //Открыть
+    //------------------------------------------------------------------------
     function openHideElement(selector) {
         return (active) => selector.classList.add(active);
     }
+
+
     //Закрыть
+    //------------------------------------------------------------------------
     function closeHideElement(selector) {
         return (active) => selector.classList.remove(active);
     }
+
+    //Меню моб версия
+    //------------------------------------------------------------------------
+    navMobBtn.addEventListener('click', function () {
+        document.querySelector('.menu').style.display = 'block';
+        document.querySelector('.menu-nav').style.display = 'block';
+        document.querySelector('.menu-list').style.display = 'none'
+        navMainList.classList.add('menu-nav__list-active');
+        addMobMenuCloseBtn('.nav-menu__close-mobile');
+    })
+    navTabMenu.addEventListener('click', function () {
+        document.querySelector('.menu').style.display = 'block';
+        document.querySelector('.menu-nav').style.display = 'block';
+        document.querySelector('.menu-list').style.display = 'none'
+        navMainList.classList.add('menu-nav__list-active');
+        addMobMenuCloseBtn('.nav-menu__close-mobile');
+    })
 
 
     //************************* */ 
