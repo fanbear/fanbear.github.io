@@ -15,9 +15,8 @@
 </head>
 
 <body>
-
     <!-- Верхная часть шапки 
-    ------------------------------------------------------------------>
+    ----------------------------------------------------------------------------------->
     <div class="flex-container top__line-bg">
         <div class="top__line flex-row">
             <div class="top__line-language align-center">
@@ -25,7 +24,10 @@
                 <span class="top__line-language-dot"></span>
                 <span><a class="hover-link top__line-language__active " href="">RU</a></span>
             </div>
-            <!-- Телефоны -->
+
+
+            <!-- Телефоны 
+                ----------------------------------------->
             <div class="top__line-phone">
                 <div class="top__line-icon"><img src="/build/img/phone_icon.jpg" width="26" height="26" alt="phone">
                 </div>
@@ -35,7 +37,10 @@
                 </div>
                 <div class="top__line-border flex-right-position"></div>
             </div>
-            <!-- Почта -->
+
+
+            <!-- Почта 
+                ----------------------------------------->
             <div class="top__line-mail">
                 <div class="top__line-icon"><img src="/build/img/e-mail_icon.jpg" width="26" height="26" alt="mail">
                 </div>
@@ -45,10 +50,14 @@
                 </div>
                 <div class="top__line-border flex-right-position"></div>
             </div>
-            <!-- Адресса -->
+
+
+            <!-- Адресса 
+                ----------------------------------------->
             <div class="top__line-address">
                 <div class="top__line-icon"><img src="/build/img/location_icon.jpg" width="24" height="32"
-                        alt="address"></div>
+                        alt="address">
+                </div>
                 <div class="top__line-text">
                     <p>Місцезнаходження</p>
                     <p><span>Київ, Україна</span></p>
@@ -64,7 +73,10 @@
                     <img src="/build/img/arrow_down.png" width="11" height="6" alt="open address">
                 </div>
             </div>
-            <!-- Пользователь -->
+
+
+            <!-- Пользователь 
+                ----------------------------------------->
             <div class="top__line-user flex-right-position">
                 <div class="top__line-icon"><img src="/build/img/login_icon.jpg" width="22" height="28" alt="phone">
                 </div>
@@ -79,23 +91,33 @@
 
 
     <!-- Шапка сайта 
-    ------------------------------------------------------------------>
+    ------------------------------------------------------------------------------------>
     <div class="flex-container">
         <div class="header flex-row">
 
-            <!-- кнопка меню для мобильной адаптации -->
+            <!-- кнопка меню для мобильной адаптации 
+            ------------------------------------------------------>
             <div class="mobile-menu flex-center hover-link"><i><i class="fas fa-bars"></i></i></div>
 
-            <!-- Логотип -->
+
+            <!-- Логотип 
+            ------------------------------------------------------>
             <div class="header-logotype align-center"><a href="/"><img src="/build/img/logo.png" width="268" height="34"
                         alt=""></a></div>
 
-            <!-- Поиск -->
+
+            <!-- Поиск 
+            ------------------------------------------------------>
             <div class="header-search">
-                <!-- кнопка меню для планшетной адаптации -->
+
+
+                <!-- кнопка меню для планшетной адаптации 
+                -------------------------------------------------->
                 <div class="table-menu flex-center hover-link hide-mobile"><i><i class="fas fa-bars"></i></i></div>
 
-                <!-- Код для модуля, вместо него php вызов поиска -->
+
+                <!-- Код для модуля, вместо него php вызов поиска 
+                -------------------------------------------------->
                 <div class="header-search__form flex-center">
                     <div class="header-search__category hide-mobile">
                         <button type="button" class="header-search__category-btn dropdown-toggle hover-link"
@@ -129,7 +151,9 @@
                 </div>
             </div>
 
-            <!-- Корзина -->
+
+            <!-- Корзина 
+                -------------------------------------------------->
             <div class="header-shop flex-evenly">
                 <div class="header-shop__compare hide-mobile">
                     <a class="hover-link" href="#"><i class="fas fa-circle-notch"></i></a>
@@ -142,16 +166,52 @@
                 <div class="header-shop__basket">
                     <a class="hover-link" href="#"><i class="fas fa-shopping-bag"></i></a>
                     <span class="header-shop__count flex-center">2</span>
+                    <div class="header-shop__basket-wrapper">
+                        <div class="basket-title">Кошик</div>
+                        <div class="basket-item flex align-center">
+                            <div class="basket-item__thumbs">
+                                <img src="/build/img/basket.png" width="100" height="100" alt="">
+                            </div>
+                            <div class="basket-item__info">
+                                <div class="basket-item__info-head"> <a class="hover-link" href="#">Відеореєстратор
+                                        Playme</a> </div>
+                                <div class="basket-item__info-body flex align-center">
+                                    <span>₴109.99</span>
+                                    <span>2 шт.</span>
+                                </div>
+                            </div>
+                            <div class="basket-item__price">₴219.89</div>
+                        </div>
+                        <div class="basket-item flex align-center">
+                            <div class="basket-item__thumbs">
+                                <img src="/build/img/basket.png" width="100" height="100" alt="">
+                            </div>
+                            <div class="basket-item__info">
+                                <div class="basket-item__info-head"> <a class="hover-link" href="#">FM Трансмітер
+                                        Promate</a> </div>
+                                <div class="basket-item__info-body flex align-center">
+                                    <span>₴280.99</span>
+                                    <span>1 шт.</span>
+                                </div>
+                            </div>
+                            <div class="basket-item__price">₴280.99</div>
+                        </div>
+                        <div class="basket-btn flex align-center">
+                            <a class="hover-link" href="">Перейти до кошика</a>
+                            <span>₴500.88</span>
+                            <button class="basket-buy">Оформити</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- Меню сайта 
-    ------------------------------------------------------------------>
+    <!-- Меню сайта
+        ------------------------------------------------------------------>
     <div class="flex-container menu">
-        <div class="flex-row flex align-center">
+        <div class="flex-row flex align-center menu-mobile__no-margin">
             <nav class="menu-nav flex align-center">
                 <div class="menu-nav__title flex ">
                     <div>Каталог</div>
@@ -293,8 +353,30 @@
     <main class="flex-container" id="product-page">
         <div class="flex-row">
             <div class="product flex">
+                <div class="product__main-category hide-desktop">Відеореєстратор</div>
+                <div class="product__h1 hide-desktop">Відеореєстратор Playme Netton</div>
+                <div class="product-data__raiting flex align-center hide-desktop">
+                    <div class="product-raiting flex-center">
+                        <div class="product-raiting__item full-star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-raiting__item full-star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-raiting__item full-star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-raiting__item full-star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-raiting__item clear-star">
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-data__raiting-digit flex align-center"> <span>4,5</span></div>
+                </div>
                 <div class="product-thumb">
-                    <div class="product-thumb__main-img">
+                    <div class="product-thumb__main-img flex-center">
                         <img src="/build/img/product-page-img.png" width="450" height:="300" alt="товар">
                     </div>
                     <div class="product-thumb__aditionaly-img">
@@ -308,9 +390,9 @@
                     </div>
                 </div>
                 <div class="product-data">
-                    <div class="product-data__main-category">Відеореєстратор</div>
-                    <div class="product-data__h1">Відеореєстратор Playme Netton</div>
-                    <div class="product-data__raiting flex align-center">
+                    <div class="product__main-category hide-tablet hide-mobile">Відеореєстратор</div>
+                    <div class="product__h1 hide-tablet hide-mobile">Відеореєстратор Playme Netton</div>
+                    <div class="product-data__raiting flex align-center hide-tablet hide-mobile">
                         <div class="product-raiting flex-center">
                             <div class="product-raiting__item full-star">
                                 <i class="fas fa-star"></i>
@@ -385,7 +467,7 @@
                                 <div class="wrapper-item__seconds" style="color: #f13636">00</div>
                             </div>
                         </div>
-                        <div class="discont-timer__date">( <span class="first-day">01.10.2021</span> - <span
+                        <div class="discont-timer__date">( <span class="first-day">01.9.2021</span> - <span
                                 class="last-day">28.10.2021</span> )</div>
                     </div>
                     <div class="product-data__actions">
@@ -481,7 +563,7 @@
                 </div>
                 <div class="product-info__body">
                     <div class="product-info__body-item flex body-item__active">
-                        <div class="body-item__title">Опис товару</div>
+                        <div class="body-item__title hide-mobile hide-tablet">Опис товару</div>
                         <div class="body-item__text">
                             <span>Відеореєстратор Playme Netton</span>
                             <p>Сучасний відеореєстратор Playme NETTON - новинка 2018 року. Перевагою є наявність двох
@@ -508,7 +590,7 @@
                         </div>
                     </div>
                     <div class="product-info__body-item">
-                        <div class="body-item__title flex-start flex">Відгуки</div>
+                        <div class="body-item__title flex-start flex hide-mobile hide-tablet">Відгуки</div>
                         <div class="body-item__text">
                             <div class="body-item__text-reviews">
                                 <span>Name Surname</span>
