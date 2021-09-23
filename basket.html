@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="build/css/normalize.css" />
+    <link rel="stylesheet" href="build/css/critical.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Верхная часть шапки 
+----------------------------------------------------------------------------------->
+    <div class="flex-container top__line-bg">
+        <div class="top__line flex-row">
+            <div class="top__line-language align-center">
+                <span><a class="hover-link " href="">UA</a></span>
+                <span class="top__line-language-dot"></span>
+                <span><a class="hover-link top__line-language__active " href="">RU</a></span>
+            </div>
+
+
+            <!-- Телефоны 
+            ----------------------------------------->
+            <div class="top__line-phone">
+                <div class="top__line-icon"><img src="/build/img/phone_icon.jpg" width="26" height="26" alt="phone">
+                </div>
+                <div class="top__line-text">
+                    <p>Телефон</p>
+                    <p><a class="hover-link" href="tel:0441234567">38 (044) 123 45 67</a></p>
+                </div>
+                <div class="top__line-border flex-right-position"></div>
+            </div>
+
+
+            <!-- Почта 
+            ----------------------------------------->
+            <div class="top__line-mail">
+                <div class="top__line-icon"><img src="/build/img/e-mail_icon.jpg" width="26" height="26" alt="mail">
+                </div>
+                <div class="top__line-text">
+                    <p>E-mail</p>
+                    <p><a class="hover-link" href="mailto:automode@gmail.com">automode@gmail.com</a></p>
+                </div>
+                <div class="top__line-border flex-right-position"></div>
+            </div>
+
+
+            <!-- Адресса 
+            ----------------------------------------->
+            <div class="top__line-address">
+                <div class="top__line-icon"><img src="/build/img/location_icon.jpg" width="24" height="32"
+                        alt="address"></div>
+                <div class="top__line-text">
+                    <p>Місцезнаходження</p>
+                    <p><span>Київ, Україна</span></p>
+                    <div class="top__line-text__hover">
+                        <p><span>Харьков, вул. Вернатського</span></p>
+                        <hr>
+                        <p><span>Львiв, вул. Вернатського</span></p>
+                        <hr>
+                        <p><span>Одесса, вул. Вернатського</span></p>
+                    </div>
+                </div>
+                <div class="top__line-button__open">
+                    <img src="/build/img/arrow_down.png" width="11" height="6" alt="open address">
+                </div>
+            </div>
+
+
+            <!-- Пользователь 
+            ----------------------------------------->
+            <div class="top__line-user flex-right-position">
+                <div class="top__line-icon"><img src="/build/img/login_icon.jpg" width="22" height="28" alt="phone">
+                </div>
+                <div class="top__line-text">
+                    <span><a class="hover-link" href="#">Ввiйти</a></span>
+                    <span>або</span>
+                    <span><a class="hover-link" href="#">Зареєструватись</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Шапка сайта 
+------------------------------------------------------------------------------------>
+    <div class="flex-container">
+        <div class="header flex-row">
+
+            <!-- кнопка меню для мобильной адаптации 
+        ------------------------------------------------------>
+            <div class="mobile-menu flex-center hover-link"><i><i class="fas fa-bars"></i></i></div>
+
+
+            <!-- Логотип 
+        ------------------------------------------------------>
+            <div class="header-logotype align-center"><a href="/"><img src="/build/img/logo.png" width="268" height="34"
+                        alt=""></a></div>
+
+
+            <!-- Поиск 
+        ------------------------------------------------------>
+            <div class="header-search">
+
+
+                <!-- кнопка меню для планшетной адаптации 
+            -------------------------------------------------->
+                <div class="table-menu flex-center hover-link hide-mobile"><i><i class="fas fa-bars"></i></i></div>
+
+
+                <!-- Код для модуля, вместо него php вызов поиска 
+            -------------------------------------------------->
+                <div class="header-search__form flex-center">
+                    <div class="header-search__category hide-mobile">
+                        <button type="button" class="header-search__category-btn dropdown-toggle hover-link"
+                            data-toggle="dropdown">
+                            <span class="header-search__category-span ">Категории</span>
+                            <span class="header-search__open-category"><img src="/build/img/arrow_down.png"
+                                    alt=""></span>
+                        </button>
+
+                        <input type="hidden" name="filter_category_id" value="" />
+                        <ul class="dropdown-menu">
+                            <li class="header-search__category-li hover-link" data-id="{{ category.category_id }}">
+                                <a>Категория 1</a>
+                            </li>
+                            <li class="header-search__category-li hover-link" data-id="{{ category.category_id }}">
+                                <a>Категория 2</a>
+                            </li>
+                            <li class="header-search__category-li hover-link" data-id="{{ category.category_id }}">
+                                <a>Категория 3</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="text" name="search" value="" placeholder="Пошук..." aria-label="Search"
+                        class="header-search__input form-control" />
+                    <button type="button" class="header-search__btn search-btn flex-center">Пошук</button>
+                </div>
+                <div class="live-search" style="display:none">
+                    <ul class="live-search__ul">
+                        <li class="loading"></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Корзина 
+            -------------------------------------------------->
+            <div class="header-shop flex-evenly">
+                <div class="header-shop__compare hide-mobile">
+                    <a class="hover-link" href="#"><i class="fas fa-circle-notch"></i></a>
+                    <span class="header-shop__count flex-center">5</span>
+                </div>
+                <div class="header-shop__wishlist hide-mobile">
+                    <a class="hover-link" href="#"><i class="fas fa-heart"></i></a>
+                    <span class="header-shop__count flex-center">3</span>
+                </div>
+                <div class="header-shop__basket">
+                    <a class="hover-link" href="#"><i class="fas fa-shopping-bag"></i></a>
+                    <span class="header-shop__count flex-center">2</span>
+                    <div class="header-shop__basket-wrapper">
+                        <div class="basket-title">Кошик</div>
+                        <div class="basket-item flex align-center">
+                            <div class="basket-item__thumbs">
+                                <img src="/build/img/basket.png" width="100" height="100" alt="">
+                            </div>
+                            <div class="basket-item__info">
+                                <div class="basket-item__info-head"> <a class="hover-link" href="#">Відеореєстратор
+                                        Playme</a> </div>
+                                <div class="basket-item__info-body flex align-center">
+                                    <span>₴109.99</span>
+                                    <span>2 шт.</span>
+                                </div>
+                            </div>
+                            <div class="basket-item__price">₴219.89</div>
+                        </div>
+                        <div class="basket-item flex align-center">
+                            <div class="basket-item__thumbs">
+                                <img src="/build/img/basket.png" width="100" height="100" alt="">
+                            </div>
+                            <div class="basket-item__info">
+                                <div class="basket-item__info-head"> <a class="hover-link" href="#">FM Трансмітер
+                                        Promate</a> </div>
+                                <div class="basket-item__info-body flex align-center">
+                                    <span>₴280.99</span>
+                                    <span>1 шт.</span>
+                                </div>
+                            </div>
+                            <div class="basket-item__price">₴280.99</div>
+                        </div>
+                        <div class="basket-btn flex align-center">
+                            <a class="hover-link" href="">Перейти до кошика</a>
+                            <span>₴500.88</span>
+                            <button class="basket-buy">Оформити</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Меню сайта
+    ------------------------------------------------------------------>
+    <div class="flex-container menu">
+        <div class="flex-row flex align-center menu-mobile__no-margin">
+            <nav class="menu-nav flex align-center">
+                <div class="menu-nav__title flex ">
+                    <div>Каталог</div>
+                    <div><i class="fas fa-bars"></i></div>
+                </div>
+                <ul class="menu-nav__list">
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="https://google.com.ua">Active
+                                    - 1</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Active -
+                                            10</a></span>
+                                    <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                                </div>
+                                <ul>
+                                    <li class="no-submenu">
+                                        <div class="menu-nav__list-title flex align-items space-between">
+                                            <span class="menu-nav__list-link"><a class="hover-link"
+                                                    href="https://google.com.ua">Link -
+                                                    100</a></span>
+                                        </div>
+                                    </li>
+                                    <li class="no-submenu">
+                                        <div class="menu-nav__list-title flex align-items space-between">
+                                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                                    100</a></span>
+                                        </div>
+                                    </li>
+                                    <li class="no-submenu">
+                                        <div class="menu-nav__list-title flex align-items space-between">
+                                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                                    100</a></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            10</a></span>
+                                </div>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            10</a></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Active - 2</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                        <ul>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            20</a></span>
+                                </div>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            20</a></span>
+                                </div>
+                            </li>
+                            <li class="no-submenu">
+                                <div class="menu-nav__list-title flex align-items space-between">
+                                    <span class="menu-nav__list-link"><a class="hover-link" href="#">Link -
+                                            20</a></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-submenu">
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Нет вложеностей</a></span>
+                        </div>
+                    </li>
+                    <li class="no-submenu">
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Нет вложеностей</a></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link - 5</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link - 6</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="menu-nav__list-title flex align-items space-between">
+                            <span class="menu-nav__list-link"><a class="hover-link" href="#">Link - 7</a></span>
+                            <span class="menu-nav__list-open"><i class="fas fa-chevron-right"></i></span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-list">
+                <ul class="flex align-center space-between">
+                    <li class="flex flex-center"><a href="#">Плюшки</a></li>
+                    <li class="flex flex-center"><a href="#">Подарунковi карти</a></li>
+                    <li class="flex flex-center"><a href="#">Клієнтам</a></li>
+                    <li class="flex flex-center"><a href="#">Послуги</a></li>
+                    <li class="flex flex-center"><a href="#">Акції</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Хлебные крошки 
+        ------------------------------------------------------------------>
+    <div class="flex-container">
+        <div class="flex-row">
+            <ul class="breadcrumb flex">
+                <li class="flex align-center"><a class="hover-link" href="/">Головна</a> <i
+                        class="fas fa-chevron-right"></i></li>
+                <li class="flex align-center">Електроніка</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Контент
+    ------------------------------------------------------------------------------->
+    <div class="flex-container" id="content">
+        <div class="flex-row">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-wrapper">
+                    <div class="form-header flex align-center">
+                        <div class="form-header__item">Кошик</div>
+                        <div class="form-header__item">Кiлькiсть</div>
+                        <div class="form-header__item">Цiна</div>
+                        <div class="form-header__item"></div>
+                    </div>
+                    <div class="form-body">
+                        <div class="form-body__item flex align-center">
+                            <div class="form-body__column flex align-center">
+                                <img src="./build/img/basket-page-1.png" width="100" height="100" alt="">
+                                <div class="form-body__item-price flex">
+                                    <span> <a class="hover-link" href="#">Відеореєстратор Playme</a> </span>
+                                    <span>₴109.99</span>
+                                </div>
+                            </div>
+                            <div class="form-body__column">
+                                <div class="form-body__column-value flex-center">
+                                    <button type="button" class="form-body__btn-count">-</button>
+                                    <input type="text" name="quanity[1]" value="1" size="2">
+                                    <button type="button" class="form-body__btn-count">+</button>
+                                </div>
+                            </div>
+                            <div class="form-body__column">
+                                <div class="form-body__column-summ">
+                                    <span>₴</span><span class="basket-summ">219.89</span>
+                                </div>
+                            </div>
+                            <div class="form-body__column">
+                                <button type="button" data-toggle="tooltip" title="" class="btn btn-danger"
+                                    onclick="cart.remove('1');" data-original-title="Удалить"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-body__item flex align-center">
+                            <div class="form-body__column flex align-center">
+                                <img src="./build/img/basket-page-1.png" width="100" height="100" alt="">
+                                <div class="form-body__item-price flex">
+                                    <span> <a class="hover-link" href="#">Відеореєстратор Playme</a> </span>
+                                    <span>₴109.99</span>
+                                </div>
+                            </div>
+                            <div class="form-body__column">
+                                <div class="form-body__column-value flex-center">
+                                    <button type="button" class="form-body__btn-count">-</button>
+                                    <input type="text" name="quanity[1]" value="1" size="2">
+                                    <button type="button" class="form-body__btn-count">+</button>
+                                </div>
+                            </div>
+                            <div class="form-body__column">
+                                <div class="form-body__column-summ">
+                                    <span>₴</span><span class="basket-summ">219.89</span>
+                                </div>
+                            </div>
+                            <div class="form-body__column">
+                                <button type="button" data-toggle="tooltip" title="" class="btn btn-danger"
+                                    onclick="cart.remove('1');" data-original-title="Удалить"><i
+                                        class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-action flex space-between">
+                        <div class="form-action__coupon">
+                            <input type="text" class="coupon-input" placeholder="Введіть купон">
+                            <button type="button" class="coupon-btn">Застосувати</button>
+                        </div>
+                        <div class="form-action__general flex">
+                            <div class="form-action__general-delivery">Безкоштовна доставка</div>
+                            <div class="form-action__general-summ"> Сума: ₴<span>500.88</span></div>
+                            <a class="flex-center" href="https://strelki.com.ua/index.php?route=checkout/checkout"
+                                class="btn btn-primary">Оформити</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Футер 
+        -------------------------------------------------------------------------------->
+    <footer>
+        <div class="flex-container main-footer">
+            <div class="flex-row align-stretch space-between flex">
+                <div class="footer-item">
+                    <div class="footer-logo">
+                        <img src="/build/img/logo.png" alt="">
+                    </div>
+                    <div class="footer-phone ">
+                        <a class="align-center hover-link" href="tel:0661370953"><img
+                                src="/build/img/call_icon_footer.png" alt="" width="42" height="42">+38 (066) 137 09
+                            53</a>
+                        <span>Киев, Україна</span>
+                    </div>
+                    <div class="footer-social">
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-twitter"></i></div>
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-facebook-f"></i></div>
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-youtube"></i></div>
+                        <div class="footer-social__item flex-center hover-link"><i class="fab fa-instagram"></i></div>
+                    </div>
+                </div>
+                <div class="footer-item hide-mobile">
+                    <p>Категории</p>
+                    <ul>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Електроника</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item hide-mobile">
+                    <p>Меню</p>
+                    <ul>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Головна</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Про Нас</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Послуги</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Товари</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Головна</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Про Нас</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Послуги</a></li>
+                        <li><a class="hover-link" href=""><i class="fas fa-chevron-right"></i>Товари</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Нижная линия -->
+        <div class="main-footer__underline ">
+            <div class="flex-container">
+                <div class="flex-row space-between flex underline">
+                    <div class="underline-item align-center">
+                        <p>© Automode. All rights reserved 2021</p>
+                    </div>
+                    <div class="underline-item align-center">
+                        <a class="flex-center hover-link" href=""><i class="fab fa-cc-paypal"></i></a>
+                        <a class="flex-center hover-link" href=""><i class="fab fa-cc-visa"></i></a>
+                        <a class="flex-center hover-link" href=""><i class="fab fa-cc-mastercard"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+            Иконки fontaweasome
+            Стили Главной страницы
+            Стили футтера
+            Стили Slick carousel
+            Скрипт Jquery
+            Скрипт Slick carousel
+            Базовые скрипты для сайта
+        -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <!-- Новый стиль -->
+    <link rel="stylesheet" href="build/css/basket.css">
+    <!-- -------------------------------- -->
+    <link rel="stylesheet" href="build/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Новый скрипт-->
+    <script type="text/javascript" src="/build/js/basket.js"></script>
+    <!-- ------------------------------------- -->
+    <script type="text/javascript" src="/build/js/common.js"></script>
+
+    <!-- Скрипт Лидеры продаж, добавить в модуль
+        ---------------------------------------------------------------------------------->
+
+</body>
+
+</html>
