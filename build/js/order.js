@@ -63,14 +63,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    //Следующий шаг в оформлении
     btnNext.addEventListener('click', function () {
+
         CheckInput();
 
         if (CheckInput() != 0) {
             let position = tabPosition(tabsHeader);
+
             if (tabPosition(tabsHeader) < 3) {
+
                 tabNextPrev(tabsHeader, position, 'next');
                 tabBodyChange(tabsBody, position)
+                btnPrev.style.display = "block";
+
                 if (tabPosition(tabsHeader) == 3) {
                     btnNext.style.display = "none";
                     btnPrev.insertAdjacentHTML('afterend', `<button type="submit" class="flex-center order-form">Оформити</button>`);
@@ -81,16 +87,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
+    //Возвращение на шаг назад
     btnPrev.addEventListener('click', function () {
+
         tabNextPrev(tabsHeader, tabPosition(tabsHeader), 'prev')
+
         if (tabPosition(tabsHeader) < 3) {
             btnNext.style.display = "flex";
-            document.querySelector('.order-form').remove();
+            if (document.querySelector('.order-form')) {
+                document.querySelector('.order-form').remove();
+            }
             document.querySelector('.form-action__general').style.display = "none";
         }
+
+        if (tabPosition(tabsHeader) == 1) {
+            btnPrev.style.display = "none";
+        }
     })
-
-
 
 
     //3 Таб, оформление заказа
